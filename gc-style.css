@@ -1,0 +1,278 @@
+/*
+ Geocledian base styles
+ 
+ created: 2021-10-11, jsommer
+ updated: 2021-10-11, jsommer
+ version: 0.1.0
+
+*/
+/* adjust colors */
+/* font awesome v5.6.0 */
+@import url("https://use.fontawesome.com/releases/v5.6.0/css/all.css");
+/* bulma v0.9.3 */
+@import url(/home/jsommer/dev/js/github/gc-styles/bulma.min.css);
+@import url(/home/jsommer/dev/js/github/gc-styles/bulma-ext/bulma-calendar/css/bulma-calendar.min.css);
+@import url(/home/jsommer/dev/js/github/gc-styles/bulma-ext/bulma-slider.min.css);
+@import url(/home/jsommer/dev/js/github/gc-styles/bulma-ext/bulma-checkradio.min.css);
+/* hotfix for safari 13 bug which causes safari to crash 
+https://bugs.webkit.org/show_bug.cgi?id=202198
+*/
+.select select {
+  text-rendering: auto !important;
+}
+
+body {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  line-height: 1.1em;
+  font-size: 0.9rem;
+}
+
+/* color scheme */
+/* is-orange is only for compatibility for old widgets */
+.gc-is-primary, .is-orange {
+  color: #EF7D00 !important;
+}
+
+.gc-is-secondary {
+  color: #F0F0F0 !important;
+}
+
+/* is-grey is only for compatibility for old widgets */
+.gc-is-tertiary, .is-grey {
+  color: #9D9D9C !important;
+}
+
+/* navigation bar */
+.navbar > div {
+  color: #EF7D00 !important;
+}
+
+.navbar > div > a {
+  color: #EF7D00 !important;
+  text-decoration: none !important;
+}
+
+.navbar-title {
+  padding: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-start > a {
+  color: #EF7D00 !important;
+  text-decoration: none !important;
+}
+
+/* tabs */
+.tabs li.is-active a {
+  border-bottom-color: #EF7D00;
+  color: #EF7D00;
+}
+
+/* buttons */
+.button.is-dark.is-active {
+  background-color: #EF7D00;
+  border-color: transparent;
+  color: #F0F0F0 !important;
+}
+
+.button.is-dark.is-active > svg {
+  color: #F0F0F0 !important;
+}
+
+.button.is-light.is-active {
+  background-color: #EF7D00;
+  border-color: transparent;
+  color: #F0F0F0 !important;
+}
+
+.button.is-light.is-active > svg {
+  color: #F0F0F0 !important;
+}
+
+.button.is-loading:after {
+  border-color: transparent transparent #EF7D00 #EF7D00 !important;
+}
+
+/* fields */
+.gc-field-horizontal {
+  padding: 1em;
+  /*min-width: 10em;*/
+}
+
+.gc-field-vertical {
+  margin: 0.25em !important;
+  /*min-width: 10em;*/
+}
+
+.gc-field-vertical .label {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.gc-field {
+  padding: 0.5em;
+}
+
+/* options */
+.gc-options-title > i {
+  transform: rotate(0deg);
+  transition: all 0.15s ease-in;
+}
+
+.gc-options-title:hover {
+  color: #EF7D00 !important;
+}
+
+.gc-options-title > i.is-active {
+  color: #9D9D9C !important;
+  transform: rotate(180deg);
+  transition: all 0.15s ease-in;
+}
+
+/*  calendar */
+.calendar {
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: #9D9D9C !important;
+  background-color: #fff !important;
+}
+
+.calendar-day {
+  font-size: 2rem !important;
+}
+
+.calendar-month {
+  font-size: 1.3rem !important;
+}
+
+.calendar-year {
+  font-size: 1.3rem !important;
+}
+
+.calendar-nav {
+  background-color: #F0F0F0 !important;
+  color: #EF7D00 !important;
+}
+
+.calendar-nav > .calendar-nav-year > button {
+  width: 2.2em !important;
+  color: #EF7D00 !important;
+  border: none !important;
+  /* Fix for Chrome / Safari - does not hurt Firefox or IEEdge */
+  display: block !important;
+}
+
+.calendar-nav > .calendar-nav-month > button {
+  width: 2.2em !important;
+  color: #EF7D00 !important;
+  border: none !important;
+  /* Fix for Chrome / Safari - does not hurt Firefox or IEEdge */
+  display: block !important;
+}
+
+.calendar-date > button.date-item.is-today.is-active {
+  background: #EF7D00 !important;
+  border-color: #EF7D00 !important;
+  color: #fff !important;
+}
+
+.calendar-date > button.date-item.is-active {
+  background: #EF7D00 !important;
+  border-color: #EF7D00 !important;
+}
+
+.calendar-date > button.date-item.is-today {
+  border-color: #EF7D00 !important;
+  color: #EF7D00 !important;
+}
+
+/* radio buttons */
+.is-checkradio[type=radio].is-orange.has-background-color + label::before {
+  border-color: #EF7D00 !important;
+  background-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=radio].is-orange:hover:not([disabled]) + label::before {
+  border-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=radio].is-orange:checked + label::after {
+  border-color: #EF7D00 !important;
+  background-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=radio].is-orange:checked.has-background-color + label::before {
+  border-color: #EF7D00 !important;
+  background-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=radio].is-orange:checked.has-background-color + label::after {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.is-checkradio[type="radio"] + label {
+  margin: 0rem;
+}
+
+.is-checkradio[type=checkbox].is-orange.has-background-color + label::before {
+  border-color: transparent !important;
+  background-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=checkbox].is-orange:hover:not([disabled]) + label::before {
+  border-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=checkbox].is-orange:checked + label::after {
+  border-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=checkbox].is-orange:checked.has-background-color + label::before {
+  border-color: transparent !important;
+  background-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=checkbox].is-orange:checked.has-background-color + label::after {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  background-color: #EF7D00 !important;
+}
+
+.is-checkradio[type=checkbox].is-orange:checked.is-block + label {
+  color: rgba(0, 0, 0, 0.7);
+  border-color: #EF7D00 !important;
+  background: #EF7D00;
+}
+
+.is-checkradio[type=checkbox].is-orange:checked.is-block + label::after {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+input[type="range"].slider {
+  margin-top: 3px !important;
+  margin-bottom: 0 !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+input[type=range].slider.is-orange::-moz-range-track {
+  background: #EF7D00;
+}
+
+input[type=range].slider.is-orange::-webkit-slider-runnable-track {
+  background: #EF7D00;
+}
+
+input[type=range].slider.is-orange::-ms-track {
+  background: #EF7D00 !important;
+}
+
+input[type=range].slider.is-orange::-ms-fill-lower {
+  background: #EF7D00;
+}
+
+input[type=range].slider.is-orange .has-output-tooltip + output,
+input[type=range].slider.is-orange.has-output + output {
+  background-color: #EF7D00;
+  color: rgba(0, 0, 0, 0.7);
+}
