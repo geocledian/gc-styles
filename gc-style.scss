@@ -75,6 +75,13 @@ body {
 
 /* buttons */ 
 
+.button {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(216, 216, 216) !important;
+    margin: 3px !important;
+}
+
 .button.is-dark.is-active {
     background-color: $primary-color;
     border-color: transparent;
