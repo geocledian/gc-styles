@@ -126,6 +126,10 @@ body {
 
 
 /* options */ 
+.gc-options-title {
+    cursor: pointer; 
+    margin-bottom: 0.5em;  
+}
 
 .gc-options-title > i {
     transform: rotate(0deg);
