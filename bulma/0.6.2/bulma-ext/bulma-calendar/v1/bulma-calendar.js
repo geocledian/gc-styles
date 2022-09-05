@@ -158,7 +158,8 @@ class datePicker {
       onSelect: null,
       onOpen: null,
       onClose: null,
-      onRender: null
+      onRender: null,
+      align: "left" // "right"
     }, options);
 
     // Initiate plugin
@@ -535,7 +536,8 @@ class datePicker {
 
     this.datePickerContainer.classList.add('is-active');
     if (!this.options.overlay) {
-      this._adjustPosition();
+      
+      this._adjustPosition(this.options.align);
     }
     this.open = true;
   }
@@ -621,7 +623,8 @@ class datePicker {
    * @method _adjustPosition
    * @return {void}
    */
-  _adjustPosition() {
+  _adjustPosition(align) {
+    console.debug("_adjustPosition()")
     var width = this.datePickerCalendar.offsetWidth,
       height = this.datePickerCalendar.offsetHeight,
       viewportWidth = window.innerWidth || document.documentElement.clientWidth,
@@ -629,13 +632,26 @@ class datePicker {
       scrollTop = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
       left, top, clientRect;
 
+    // JS hack for right align
     if (typeof this.element.getBoundingClientRect === 'function') {
       clientRect = this.element.getBoundingClientRect();
       left = clientRect.left + window.pageXOffset;
       top = clientRect.bottom + window.pageYOffset;
+      if (align == "right") {
+        // 318 is the width of the datepicker
+        left -= (318-clientRect.width);
+      }
+      console.debug("left: " + left)
+      console.debug("top: " + top)
     } else {
       left = this.element.offsetLeft;
       top = this.element.offsetTop + this.element.offsetHeight;
+      if (align == "right") {
+        // 318 is the width of the datepicker
+        left -= (318-clientRect.width);
+      }
+      console.debug("left: " + left)
+      console.debug("top: " + top)
       while ((this.element = this.element.offsetParent)) {
         left += this.element.offsetLeft;
         top += this.element.offsetTop;

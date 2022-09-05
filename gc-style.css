@@ -10,11 +10,11 @@
 /* font awesome v5.6.0 */
 @import url("https://use.fontawesome.com/releases/v5.6.0/css/all.css");
 /* bulma */
-@import url(/home/jsommer/dev/js/github/gc-styles/bulma/0.9.3/bulma.min.css);
+@import "bulma/0.9.3/bulma.min.css";
 /* bulma extensions */
-@import url(/home/jsommer/dev/js/github/gc-styles/bulma/0.6.2/bulma-ext/bulma-calendar/v1/bulma-calendar.min.css);
-@import url(/home/jsommer/dev/js/github/gc-styles/bulma/0.6.2/bulma-ext/bulma-slider.min.css);
-@import url(/home/jsommer/dev/js/github/gc-styles/bulma/0.6.2/bulma-ext/bulma-checkradio.min.css);
+@import "bulma/0.6.2/bulma-ext/bulma-calendar/v1/bulma-calendar.min.css";
+@import "bulma/0.6.2/bulma-ext/bulma-slider.min.css";
+@import "bulma/0.6.2/bulma-ext/bulma-checkradio.min.css";
 /* hotfix for safari 13 bug which causes safari to crash 
 https://bugs.webkit.org/show_bug.cgi?id=202198
 */
